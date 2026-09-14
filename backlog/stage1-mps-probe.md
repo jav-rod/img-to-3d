@@ -50,8 +50,8 @@ Aislar la etapa de geometria gruesa de SAM 3D Objects y probar si puede correr e
 - [x] Agregar runner.
 - [x] Agregar bootstrap upstream autocontenido.
 - [x] Verificar sintaxis.
-- [ ] Commit.
-- [ ] Push.
+- [x] Commit.
+- [x] Push.
 
 ## Resultado Esperado
 
@@ -61,3 +61,5 @@ Una base de trabajo versionada para seguir investigando SAM 3D Objects stage1 en
 
 - `rg -n "codex-mobile-tmux|\\.\\./sam-3d-objects|/Users/javierrodriguez/claude-workspace/sam-3d-objects" . || true` no encontro referencias.
 - `python3 -m py_compile tools/bootstrap_sam3d.py tools/run_stage1_only.py` paso.
+- Commit inicial: `f94903e Initialize stage1 MPS probe workspace`.
+- Push inicial: branch `research/stage1-mps` publicada en `origin`.
