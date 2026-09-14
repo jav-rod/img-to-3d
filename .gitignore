@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# Upstream code and downloaded model files are materialized by tools/bootstrap_sam3d.py.
+third_party/sam-3d-objects/
+checkpoints/
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+
+# Local outputs
+*.ply
+*.glb
+outputs/

@@ -1,0 +1,63 @@
+# Stage1 MPS Probe
+
+**Estado:** en progreso
+**Fecha:** 2026-09-13
+
+## Objetivo
+
+Aislar la etapa de geometria gruesa de SAM 3D Objects y probar si puede correr en Mac/MPS o CPU sin resolver todavia gaussian splats, mesh, texturas ni postprocess.
+
+## Alcance
+
+- Inicializar repo `img-to-3d` con way of work adaptado.
+- Documentar restricciones CUDA/MPS observadas.
+- Agregar runner experimental `stage1_only`.
+- Mantener el checkout upstream bajo `third_party/sam-3d-objects`, ignorado por git.
+- Commit y push por incrementos.
+
+## Fuera De Alcance
+
+- Port completo de `spconv`.
+- Mesh/GLB/textura.
+- Descarga de checkpoints sin login Hugging Face.
+- Validar calidad de reconstruccion.
+
+## Archivos Afectados
+
+- `WAY_OF_WORK.md`
+- `README.md`
+- `docs/README.md`
+- `docs/reference/sam3d-objects-runtime-constraints.md`
+- `docs/tools/stage1-only-runner.md`
+- `tools/bootstrap_sam3d.py`
+- `tools/run_stage1_only.py`
+- `third_party/README.md`
+
+## Plan
+
+1. Inicializar documentacion y backlog.
+2. Agregar runner stage1-only.
+3. Verificar sintaxis local.
+4. Commit y push de branch.
+5. Crear siguiente spec para parches MPS si el runner alcanza un bloqueo concreto.
+
+## Checklist
+
+- [x] Clonar `img-to-3d`.
+- [x] Adaptar way of work dentro de este repo.
+- [x] Crear branch `research/stage1-mps`.
+- [x] Limpiar cambios locales en el checkout upstream usado para investigar.
+- [x] Agregar runner.
+- [x] Agregar bootstrap upstream autocontenido.
+- [x] Verificar sintaxis.
+- [ ] Commit.
+- [ ] Push.
+
+## Resultado Esperado
+
+Una base de trabajo versionada para seguir investigando SAM 3D Objects stage1 en Mac/MPS con evidencia incremental.
+
+## Evidencia
+
+- `rg -n "codex-mobile-tmux|\\.\\./sam-3d-objects|/Users/javierrodriguez/claude-workspace/sam-3d-objects" . || true` no encontro referencias.
+- `python3 -m py_compile tools/bootstrap_sam3d.py tools/run_stage1_only.py` paso.
