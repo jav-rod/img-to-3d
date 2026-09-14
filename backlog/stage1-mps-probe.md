@@ -74,3 +74,5 @@ Una base de trabajo versionada para seguir investigando SAM 3D Objects stage1 en
 - `.venv/bin/python tools/check_local_env.py` reporto `mps available: True`, `torch: 2.14.0`, `sam3d config: missing`, `hf auth: Error: Not logged in`.
 - `.venv/bin/python tools/run_stage1_only.py --image missing-image.png --mask missing-mask.png` fallo temprano por `third_party/sam-3d-objects/checkpoints/hf/pipeline.yaml` faltante.
 - `.venv/bin/python tools/download_sam3d_checkpoints.py` fallo por repo gated sin login/acceso y limpio `checkpoints/hf-download`.
+- Luego de `hf auth login`, `.venv/bin/hf auth whoami` reporto `user: Javier-godsmack`.
+- `.venv/bin/python tools/download_sam3d_checkpoints.py` sigue fallando por repo gated; la cuenta esta autenticada pero todavia no tiene acceso aprobado a `facebook/sam-3d-objects`.
