@@ -1,0 +1,14 @@
+# Minimal local tooling for the SAM 3D Objects stage1 probe on macOS.
+#
+# This is not the full upstream environment. It is intentionally small so we can
+# probe device/import/checkpoint failures before tackling CUDA-only packages.
+torch
+torchvision
+numpy
+pillow
+omegaconf
+hydra-core
+loguru
+tqdm
+safetensors
+huggingface-hub[cli]<1.0

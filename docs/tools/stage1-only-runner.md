@@ -32,6 +32,7 @@ python tools/run_stage1_only.py \
 
 ```bash
 python tools/bootstrap_sam3d.py
+python tools/download_sam3d_checkpoints.py
 ```
 
 ## Validacion Pendiente

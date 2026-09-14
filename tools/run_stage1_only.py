@@ -144,17 +144,17 @@ def main() -> None:
     os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
     os.environ.setdefault("LIDRA_SKIP_INIT", "true")
 
-    import torch
-    from hydra.utils import instantiate
-    from omegaconf import OmegaConf
-
-    import sam3d_objects  # noqa: F401
-
     config_path = Path(args.config).resolve()
     if not config_path.exists():
         raise FileNotFoundError(
             f"Missing {config_path}. Download checkpoints from Hugging Face first."
         )
+
+    import torch
+    from hydra.utils import instantiate
+    from omegaconf import OmegaConf
+
+    import sam3d_objects  # noqa: F401
 
     device = args.device or choose_device()
     config = OmegaConf.load(config_path)
